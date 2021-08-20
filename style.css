@@ -1,0 +1,243 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    padding: 30px;
+    padding-top: 100px;
+    gap: 50px;
+    flex-flow: row wrap;
+    background-color: #eeeeee;
+}
+
+input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+}
+
+.btn {
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #121212;
+}
+
+.btn:hover {
+    transform: scale(1.01);
+}
+
+.btn:active {
+    transform: scale(0.99);
+}
+
+.hide{
+    display: none;
+}
+
+.container {
+    max-width: 1024px;
+    width: 400px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    background-color: #eeeeee;
+    margin: auto;
+    border-radius: 30px;
+    border-top: 15px solid #3cff66;
+    padding: 20px;
+    box-shadow: 6px 6px 8px 1px #d3d3d3, -2px -2px 6px #d3d3d3;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.container.search{
+    border-top-color: #3cd1ff;
+}
+
+.container.add-meal{
+    border-color: #ffbb3c;
+}
+.btn-picker {
+    box-shadow: 3px 3px 8px #3cff66;
+    background-color: #3cff66;
+}
+
+.meal-search-buttons{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-search{
+    box-shadow: 3px 3px 8px #3cd1ff;
+    background-color: #3cd1ff;
+}
+
+.btn-clear{
+    box-shadow: 3px 3px 8px #ffffff;
+    background-color: #ffffff;
+}
+
+.btn-addMeal{
+    box-shadow: 3px 3px 8px #ffbb3c;
+    background-color: #ffbb3c;
+}
+
+.chosen-meal, .matched-meal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.chosen-meal{
+    padding: 10px;
+}
+
+.matched-meal{
+    flex-direction: column;
+    overflow: auto;
+}
+
+
+.matched-meal p{
+    padding: 10px 0 10px 10px;
+}
+
+#ingredient{
+    outline-color: #85e3ff;
+}
+
+
+/* ADD meal */
+.add-meal{
+    position: relative;
+
+}
+
+#addMeal{
+    outline-color: #ffd485;
+    margin-top: 25px;
+}
+
+.alert-success{
+    background-color: #d4ffdd;
+    padding: 8px 15px;
+    width: 90%;
+    color: #00af26;
+    border-radius: 10px;
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    font-size: 14px;
+}
+
+
+/* BMI Calculator */
+.container.bmi-index{
+    width: auto;
+    border-top: 15px solid #8820ff;
+}
+
+#bmi-result{
+    padding: 8px;
+    background-color: #ffffff;
+}
+
+.bmi-calculator{
+    margin: 20px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+}
+
+#weight, #height{
+    outline-color: #c797ff;
+    padding: 10px;
+    margin: 10px 5px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+}
+
+.bmi-buttons{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-bmi{
+    box-shadow: 3px 3px 8px #8820ff;
+    background-color: #8820ff;
+    color: #ffffff;
+}
+
+.bmi-standards{
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.bmi-standards span{
+    padding: 10px;
+}
+
+.bmi-standards span:nth-child(1){
+    background-color: #ff6a6a;
+    color: #3f0000;
+    border-radius: 10px 0 0 10px;
+}
+.bmi-standards span:nth-child(2){
+    background-color: #ff9166;
+    color: #7e2400;
+}
+.bmi-standards span:nth-child(3){
+    background-color: #ffcf66;
+    color: #4e3500;
+}
+.bmi-standards span:nth-child(4){
+    background-color: #85ff66;
+    color: #115300;
+}
+.bmi-standards span:nth-child(5){
+    background-color: #fffd81;
+    color: #555300;
+}
+.bmi-standards span:nth-child(6){
+    background-color: #ffcf66;
+    color: #4e3500;
+}
+.bmi-standards span:nth-child(7){
+    background-color: #ff9166;
+    color: #7e2400;
+}
+.bmi-standards span:nth-child(8){
+    background-color: #ff6a6a;
+    color: #3f0000;
+    border-radius: 0 10px 10px 0;
+}
+
+
+/* DELETE all meals */
+
+.container.delete-meals{
+    border-top: 15px solid #e62929;
+}
+
+.btn-delete-meals{
+    background-color: #e62929;
+    color: #ffffff;
+}

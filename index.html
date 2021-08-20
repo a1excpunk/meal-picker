@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/healthy-eating.svg" type="image/x-icon">
+    <script src="./main.js" defer></script>
+    <title> Meal Picker</title>
+</head>
+
+<body>
+    <div class="container">
+        <h4>today you gonna eat</h4>
+        <div class="chosen-meal" id="chosen-meal"></div>
+        <div>
+            <button class="btn btn-picker" id="btn-picker">Pick Meal</button>
+        </div>
+    </div>
+    <div class="container search">
+        <h4>find the meal</h4>
+        <div class="matched-meal" id="matched-meal"></div>
+        <input type="text" name="ingredient" id="ingredient">
+        <div class="meal-search-buttons">
+            <button class="btn btn-search" id="btn-search">Search Meal</button>
+            <button class="btn btn-clear" id="btn-findMeal-clear">Clear</button>
+        </div>
+    </div>
+    <div class="container add-meal">
+        <h4>add meal</h4>
+        <p class="hide alert-success" id="added-success"></p>
+        <input type="text" name="addMeal" id="addMeal">
+        <button class="btn btn-addMeal" id="btn-add-meal">Add Meal</button>
+    </div>
+    <div class="container delete-meals">
+        <h4>Ddelete all meals</h4>
+        <button class="btn btn-delete-meals" id="btn-delete-meals">Delete Meals</button>
+    </div>
+    <div class="container bmi-index">
+        <h4>BMI Index (for adults)</h4>
+        <p>your index is: <span id="bmi-result">0</span></p>
+        <div class="bmi-calculator">
+            <div>
+                <label for="weight">weight
+                    <input type="number" name="weight" id="weight">
+                </label>
+                <label for="height">
+                    Height
+                    <input type="number" name="height" id="height">
+                </label>
+            </div>
+            <div class="bmi-buttons">
+                <button class="btn btn-bmi" id="btn-bmi-calculate">Calculate</button>
+                <button class="btn btn-clear" id="btn-bmi-clear">Clear</button>
+            </div>
+        </div>
+        <div class="bmi-standards">
+            <span title="Severe Thinness">under 16</span>
+            <span title="Moderate Thinness">16 - 17</span>
+            <span title="Mild Thinness">17 - 18.5</span>
+            <span title="Normal">18.5 - 25</span>
+            <span title="Overweight">25 - 30</span>
+            <span title="Obese Class I">30 - 35</span>
+            <span title="Obese Class II">35 - 40</span>
+            <span title="Obese Class III">over 40</span>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
