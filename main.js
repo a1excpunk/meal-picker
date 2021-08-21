@@ -11,6 +11,7 @@ const ADD_MEAL_INPUT = document.getElementById('addMeal');
 const ADDED_MEAL_SUCCESS = document.getElementById('added-success');
 
 const DELETE_ALL_MEAL = document.getElementById('btn-delete-meals');
+const DELETE_ALL_MEAL_MESSAGE = document.getElementById('delete-message');
 
 const BMI_RESULT = document.getElementById('bmi-result');
 const BMI_WEIGHT_INPUT = document.getElementById('weight');
@@ -20,7 +21,13 @@ const BMI_CLEAR_BTN = document.getElementById('btn-bmi-clear');
 
 
 let meals = localStorage.getItem(0);
-let allMeals = [];
+let allMeals ;
+
+if(meals ===null){
+    allMeals = [];
+}else{
+    allMeals = JSON.parse(meals);
+}
 
 function randomizer() {
     return Math.floor(Math.random() * allMeals.length)
@@ -34,12 +41,28 @@ function bmiFormula(weight, height) {
     return (weight / (height ** 2) * 10000).toFixed(1);
 }
 
+function redMessage(element){
+    element.style.backgroundColor = '#ffbebe';
+    element.style.color = '#c20000';
+    element.style.fontSize = '14px'
+}
+
+function greenMessage(element){
+    element.style.backgroundColor = '#d4ffdd';
+    element.style.color = '#00af26';
+    element.style.fontSize = '14px'
+}
+
+function initialStyle (element){
+    element.style.backgroundColor = 'initial'
+    element.style.color = 'initial'
+    element.style.fontSize = 'initial'
+}
 
 PICKER_BTN.addEventListener('click', () => {
     if (allMeals[0] === undefined) {
         CHOSEN_MEAL.innerText = 'there is no meal, add some first'
-        CHOSEN_MEAL.style.backgroundColor = '#ffbebe'
-        CHOSEN_MEAL.style.color = '#c20000'
+        redMessage(CHOSEN_MEAL);
     } else {
         CHOSEN_MEAL.style.backgroundColor = 'transparent'
         CHOSEN_MEAL.style.color = 'initial'
@@ -51,11 +74,14 @@ PICKER_BTN.addEventListener('click', () => {
 SEARCH_BTN.addEventListener('click', () => {
     if (!INGREDIENTS_INPUT.value) {
         MATCHED_MEAL.innerText = "forgot to write key word"
+        redMessage(MATCHED_MEAL)
     } else if (searchIngredients(INGREDIENTS_INPUT.value).every((val) => val === null)) {
         MATCHED_MEAL.innerText = "there is no meal to match or you spelled it wrong"
+        redMessage(MATCHED_MEAL)
 
     }
     else if (searchIngredients(INGREDIENTS_INPUT.value) !== null) {
+        initialStyle(MATCHED_MEAL)
         if (MATCHED_MEAL.hasChildNodes()) {
             MATCHED_MEAL.innerHTML = ''
         }
@@ -72,7 +98,9 @@ SEARCH_BTN.addEventListener('click', () => {
 });
 
 FIND_MEAL_CLEAR_BTN.addEventListener('click', () => {
-    MATCHED_MEAL.innerHTML = ''
+    MATCHED_MEAL.innerHTML = '';
+    INGREDIENTS_INPUT.value = '';
+    initialStyle(MATCHED_MEAL)
 });
 
 BMI_CALCULATE_BTN.addEventListener('click', () => {
@@ -94,24 +122,19 @@ ADD_MEAL_BTN.addEventListener('click', () => {
 
     if (!ADD_MEAL_INPUT.value) {
         ADDED_MEAL_SUCCESS.innerText = 'forgot to write meal';
-        ADDED_MEAL_SUCCESS.style.backgroundColor = '#ff6a6a';
-        ADDED_MEAL_SUCCESS.style.color = '#3f0000';
+        redMessage(ADDED_MEAL_SUCCESS)
     }
     if (ADD_MEAL_INPUT.value) {
         ADDED_MEAL_SUCCESS.innerText = 'Meal Successfully Added';
-        ADDED_MEAL_SUCCESS.style.backgroundColor = '#d4ffdd';
-        ADDED_MEAL_SUCCESS.style.color = '#00af26';
+        greenMessage(ADDED_MEAL_SUCCESS)
         allMeals.push(ADD_MEAL_INPUT.value);
-        console.log();
         localStorage.setItem(0, JSON.stringify(allMeals));
-
         ADD_MEAL_INPUT.value = ''
     }
     ADDED_MEAL_SUCCESS.classList.remove('hide');
     setTimeout(() => ADDED_MEAL_SUCCESS.classList.add('hide'), 2000);
 
 })
-
 
 DELETE_ALL_MEAL.addEventListener('click', () => {
     localStorage.clear()

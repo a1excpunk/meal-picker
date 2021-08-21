@@ -27,7 +27,7 @@ input[type="text"]{
     cursor: pointer;
     padding: 15px 20px;
     font-size: 16px;
-    color: #121212;
+    color: #303030;
 }
 
 .btn:hover {
@@ -36,6 +36,8 @@ input[type="text"]{
 
 .btn:active {
     transform: scale(0.99);
+    box-shadow: 1px 1px 2px #919191;
+
 }
 
 .hide{
@@ -70,6 +72,7 @@ input[type="text"]{
 .btn-picker {
     box-shadow: 3px 3px 8px #3cff66;
     background-color: #3cff66;
+    outline-color: #3cff66;
 }
 
 .meal-search-buttons{
@@ -82,16 +85,14 @@ input[type="text"]{
 .btn-search{
     box-shadow: 3px 3px 8px #3cd1ff;
     background-color: #3cd1ff;
+    outline-color: #3cd1ff;
 }
 
 .btn-clear{
+    color: #444444;
     box-shadow: 3px 3px 8px #ffffff;
     background-color: #ffffff;
-}
-
-.btn-addMeal{
-    box-shadow: 3px 3px 8px #ffbb3c;
-    background-color: #ffbb3c;
+    outline-color: #ffffff;
 }
 
 .chosen-meal, .matched-meal {
@@ -107,7 +108,7 @@ input[type="text"]{
 
 .matched-meal{
     flex-direction: column;
-    overflow: auto;
+    padding: 8px;
 }
 
 
@@ -131,12 +132,15 @@ input[type="text"]{
     margin-top: 25px;
 }
 
+.btn-addMeal{
+    box-shadow: 3px 3px 8px #ffbb3c;
+    background-color: #ffbb3c;
+    outline-color: #ffbb3c;
+}
+
 .alert-success{
-    background-color: #d4ffdd;
     padding: 8px 15px;
     width: 90%;
-    color: #00af26;
-    border-radius: 10px;
     position: absolute;
     top: 45px;
     left: 20px;
@@ -181,6 +185,7 @@ input[type="text"]{
     box-shadow: 3px 3px 8px #8820ff;
     background-color: #8820ff;
     color: #ffffff;
+    outline-color: #8820ff;
 }
 
 .bmi-standards{
@@ -238,6 +243,8 @@ input[type="text"]{
 }
 
 .btn-delete-meals{
+    box-shadow: 3px 3px 8px #e62929;
     background-color: #e62929;
+    outline-color: #e62929;
     color: #ffffff;
 }
