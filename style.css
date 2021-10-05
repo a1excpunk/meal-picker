@@ -238,6 +238,15 @@ input[type="text"] {
     border-radius: 0 10px 10px 0;
 }
 
+/* Every meal buttons */
+.every-meal-btns{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+
 /* DELETE all meals */
 
 .btn-delete-meals {

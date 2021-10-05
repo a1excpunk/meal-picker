@@ -168,13 +168,19 @@ ADD_MEAL_BTN.addEventListener('click', () => {
         ADD_MEAL_INPUT.value = ''
     }
     ADDED_MEAL_SUCCESS.classList.remove('hide');
-    setTimeout(() => ADDED_MEAL_SUCCESS.classList.add('hide'), 2000);
+    setTimeout(() => ADDED_MEAL_SUCCESS.classList.add('hide'), 1500);
 
 });
 
 DELETE_ALL_MEAL.addEventListener('click', () => {
-    localStorage.clear()
-    window.location.reload(true);
+    localStorage.clear();
+    SHOW_EVERY_MEAL.appendChild(message);
+    message.innerText = 'every meal has been deleted';
+    message.style.padding = "10px 0"
+    redMessage(message);
+    setTimeout(() => {
+        window.location.reload(true);
+    }, 1500)
 });
 
 SHOW_EVERY_MEAL_BTN.addEventListener('click', () => {
@@ -185,6 +191,7 @@ SHOW_EVERY_MEAL_BTN.addEventListener('click', () => {
         message.innerText = 'there is no meal, add some first';
         message.style.padding = "10px 0"
         redMessage(message);
+        setTimeout(()=> SHOW_EVERY_MEAL.removeChild(message),1500)
     }
 });
 
