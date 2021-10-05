@@ -174,6 +174,7 @@ ADD_MEAL_BTN.addEventListener('click', () => {
 
 DELETE_ALL_MEAL.addEventListener('click', () => {
     localStorage.clear();
+    SHOW_EVERY_MEAL.innerHTML = '';
     SHOW_EVERY_MEAL.appendChild(message);
     message.innerText = 'every meal has been deleted';
     message.style.padding = "10px 0"
