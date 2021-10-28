@@ -48,19 +48,22 @@ function bmiFormula(weight, height) {
 function redMessage(element) {
     element.style.backgroundColor = '#ffbebe';
     element.style.color = '#c20000';
-    element.style.fontSize = '14px'
+    element.style.fontSize = '12px';
+    element.style.alignItems = 'center';
+    element.style.padding = '6px';
 }
 
 function greenMessage(element) {
     element.style.backgroundColor = '#d4ffdd';
     element.style.color = '#00af26';
-    element.style.fontSize = '14px'
+    element.style.fontSize = '12px'
 }
 
 function initialStyle(element) {
     element.style.backgroundColor = 'initial'
     element.style.color = 'initial'
     element.style.fontSize = 'initial'
+    element.style.alignItems = 'initial';
 }
 
 function everyMealInStorage() {
@@ -102,7 +105,7 @@ PICKER_BTN.addEventListener('click', () => {
         redMessage(CHOSEN_MEAL);
     } else {
         CHOSEN_MEAL.style.backgroundColor = 'transparent'
-        CHOSEN_MEAL.style.color = 'initial'
+        CHOSEN_MEAL.style.color = '#e7e7e7'
         CHOSEN_MEAL.innerText = allMeals[randomizer()]
     }
 });
@@ -128,7 +131,6 @@ SEARCH_BTN.addEventListener('click', () => {
             mealContainer.innerText = `${i + 1}) ${searchIngredients(INGREDIENTS_INPUT.value).filter(matchedMeal => matchedMeal !== null)[i]['input']}`;
 
         }
-        console.log(searchIngredients(INGREDIENTS_INPUT.value));
         INGREDIENTS_INPUT.value = '';
     }
 });
@@ -195,4 +197,3 @@ SHOW_EVERY_MEAL_BTN.addEventListener('click', () => {
         setTimeout(()=> SHOW_EVERY_MEAL.removeChild(message),1500)
     }
 });
-

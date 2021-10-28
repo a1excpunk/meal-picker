@@ -12,13 +12,16 @@
 </head>
 
 <body>
+    <!-- Random meal -->
     <div class="container">
-        <h4>today you gonna eat</h4>
+        <h4>today you gonna eat...</h4>
         <div class="chosen-meal" id="chosen-meal"></div>
         <div>
-            <button class="btn btn-picker" id="btn-picker">Pick Meal</button>
+            <button class="btn btn-picker" id="btn-picker">Random Meal</button>
         </div>
     </div>
+
+    <!-- Search meal -->
     <div class="container search">
         <h4>find the meal</h4>
         <div class="matched-meal" id="matched-meal"></div>
@@ -28,12 +31,16 @@
             <button class="btn btn-clear" id="btn-findMeal-clear">Clear</button>
         </div>
     </div>
+
+    <!-- Add meal -->
     <div class="container add-meal">
         <h4>add meal</h4>
         <p class="hide alert-success" id="added-success"></p>
         <input type="text" name="addMeal" id="addMeal">
         <button class="btn btn-addMeal" id="btn-add-meal">Add Meal</button>
     </div>
+
+    <!-- Every meal -->
     <div class="container show-every-meal">
         <h4>every meal</h4>
         <div id="every-meal"></div>
@@ -42,17 +49,19 @@
             <button class="btn btn-delete-meals" id="btn-delete-meals">Delete Every Meal</button>
         </div>
     </div>
+
+    <!-- BMI -->
     <div class="container bmi-index">
         <h4>BMI Index (for adults)</h4>
         <p>your index is: <span id="bmi-result">0</span></p>
         <div class="bmi-calculator">
             <div>
-                <label for="weight">weight
-                    <input type="number" name="weight" id="weight">
+                <label for="weight">weight (kg)
+                    <input type="text" name="weight" id="weight">
                 </label>
                 <label for="height">
-                    Height
-                    <input type="number" name="height" id="height">
+                    Height (cm)
+                    <input type="text" name="height" id="height">
                 </label>
             </div>
             <div class="bmi-buttons">

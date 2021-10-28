@@ -1,3 +1,5 @@
+/* GEneral */
+
 * {
     padding: 0;
     margin: 0;
@@ -11,14 +13,27 @@ body {
     padding-top: 100px;
     gap: 50px;
     flex-flow: row wrap;
-    background-color: #eeeeee;
+    background-color: #1a1a1a;
+    color: #e7e7e7;
+}
+
+.hide {
+    display: none;
+}
+
+h4 {
+    font-size: 1.5em;
 }
 
 input[type="text"] {
-    width: 100%;
+    min-width: 300px;
     padding: 10px;
-    border: 1px solid #aaa;
+    border: none;
     border-radius: 10px;
+    background-color: #252525;
+    color: #e7e7e7;
+    box-shadow: 5px 5px 8px 1px #141414 inset;
+    outline: none;
 }
 
 .btn {
@@ -27,7 +42,7 @@ input[type="text"] {
     cursor: pointer;
     padding: 15px 20px;
     font-size: 16px;
-    color: #303030;
+    color: #1a1a1a;
 }
 
 .btn:hover {
@@ -36,62 +51,38 @@ input[type="text"] {
 
 .btn:active {
     transform: scale(0.99);
-    box-shadow: 1px 1px 2px #919191;
+    box-shadow: none;
 }
 
-.hide {
-    display: none;
+.btn-clear {
+    color: #1a1a1a;
+    box-shadow: 1px 1px 7px #e8e8e87c;
+    background-color: #E8E8E8;
+    outline-color: #E8E8E8;
 }
 
 .container {
     max-width: 1024px;
-    width: 400px;
+    width: 100%;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
     align-items: center;
     gap: 20px;
-    background-color: #eeeeee;
+    background-color: #1a1a1a;
     margin: auto;
     border-radius: 30px;
     padding: 20px;
-    box-shadow: 6px 6px 8px 1px #d3d3d3, -2px -2px 6px #d3d3d3;
+    /* box-shadow: 5px 5px 8px 1px #141414, -2px -2px 8px #252525; */
     text-transform: capitalize;
     text-align: center;
+    color: #e7e7e7;
 }
 
-.container.search {
-    border-top-color: #3cd1ff;
-}
-
-.container.add-meal {
-    border-color: #ffbb3c;
-}
-
-.btn-picker {
-    box-shadow: 3px 3px 8px #3cff66;
-    background-color: #3cff66;
-    outline-color: #3cff66;
-}
-
-.meal-search-buttons {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn-search {
-    box-shadow: 3px 3px 8px #3cd1ff;
-    background-color: #3cd1ff;
-    outline-color: #3cd1ff;
-}
-
-.btn-clear {
-    color: #444444;
-    box-shadow: 3px 3px 8px #ffffff;
-    background-color: #ffffff;
-    outline-color: #ffffff;
+.alert-success {
+    width: 90%;
+    position: absolute;
+    top: 50px;
 }
 
 .chosen-meal, .matched-meal {
@@ -101,172 +92,83 @@ input[type="text"] {
     width: 100%;
 }
 
-.chosen-meal {
-    padding: 10px;
+/* Random meal */
+
+.btn-picker {
+    box-shadow: 1px 1px 7px #26b756;
+    background-color: #26B756;
+    outline-color: #26B756;
 }
 
-.matched-meal {
-    flex-direction: column;
-    padding: 8px;
-}
+/* Search meal */
 
-.matched-meal p {
-    padding: 10px 0 10px 10px;
-}
-
-#ingredient {
-    outline-color: #85e3ff;
-}
-
-/* ADD meal */
-
-.add-meal {
-    position: relative;
-}
-
-#addMeal {
-    outline-color: #ffd485;
-    margin-top: 25px;
-}
-
-.btn-addMeal {
-    box-shadow: 3px 3px 8px #ffbb3c;
-    background-color: #ffbb3c;
-    outline-color: #ffbb3c;
-}
-
-.alert-success {
-    padding: 8px 15px;
-    width: 90%;
-    position: absolute;
-    top: 45px;
-    left: 20px;
-    font-size: 14px;
-}
-
-/* BMI Calculator */
-
-.container.bmi-index {
-    width: auto;
-}
-
-#bmi-result {
-    padding: 8px;
-    background-color: #ffffff;
-}
-
-.bmi-calculator {
-    margin: 20px 0;
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 30px;
-}
-
-#weight, #height {
-    outline-color: #c797ff;
-    padding: 10px;
-    margin: 10px 5px;
-    border: 1px solid #aaa;
-    border-radius: 10px;
-}
-
-.bmi-buttons {
+.meal-search-buttons {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     gap: 20px;
 }
 
-.btn-bmi {
-    box-shadow: 3px 3px 8px #8820ff;
-    background-color: #8820ff;
-    color: #ffffff;
-    outline-color: #8820ff;
+.btn-search {
+    box-shadow: 1px 1px 7px #01B7C4;
+    background-color: #01B7C4;
+    outline-color: #01B7C4;
 }
 
-.bmi-standards {
-    border-radius: 10px;
-    margin: 10px;
-    cursor: pointer;
-    display: flex;
-    flex-flow: row wrap;
+.matched-meal {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
 }
 
-.bmi-standards span {
-    padding: 10px;
+.matched-meal p {
+    padding: 10px 0 10px 10px;
+    color: #e7e7e7;
 }
 
-.bmi-standards span:nth-child(1) {
-    background-color: #ff6a6a;
-    color: #3f0000;
-    border-radius: 10px 0 0 10px;
+#ingredient {
+    outline: none;
 }
 
-.bmi-standards span:nth-child(2) {
-    background-color: #ff9166;
-    color: #7e2400;
+/* ADD meal */
+
+.container.add-meal {
+    border-color: #E88E06;
 }
 
-.bmi-standards span:nth-child(3) {
-    background-color: #ffcf66;
-    color: #4e3500;
+.add-meal {
+    position: relative;
 }
 
-.bmi-standards span:nth-child(4) {
-    background-color: #85ff66;
-    color: #115300;
+#addMeal {
+    outline: none;
+    margin-top: 20px;
 }
 
-.bmi-standards span:nth-child(5) {
-    background-color: #fffd81;
-    color: #555300;
-}
-
-.bmi-standards span:nth-child(6) {
-    background-color: #ffcf66;
-    color: #4e3500;
-}
-
-.bmi-standards span:nth-child(7) {
-    background-color: #ff9166;
-    color: #7e2400;
-}
-
-.bmi-standards span:nth-child(8) {
-    background-color: #ff6a6a;
-    color: #3f0000;
-    border-radius: 0 10px 10px 0;
-}
-
-/* Every meal buttons */
-.every-meal-btns{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-
-/* DELETE all meals */
-
-.btn-delete-meals {
-    box-shadow: 3px 3px 8px #e62929;
-    background-color: #e62929;
-    outline-color: #e62929;
-    color: #ffffff;
+.btn-addMeal {
+    box-shadow: 1px 1px 7px #E88E06;
+    background-color: #E88E06;
+    outline-color: #E88E06;
 }
 
 /*SHOW all meals*/
 
 .btn-show-every-meal {
-    box-shadow: 3px 3px 8px #e629bd;
-    background-color: #e629bd;
-    outline-color: #e629bd;
-    color: #ffffff;
+    box-shadow: 1px 1px 7px #da178f;
+    background-color: #da178f;
+    outline-color: #da178f;
+    color: #f1f1f1;
 }
 
 #every-meal {
     width: 100%;
+}
+
+.every-meal-btns {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 .meal-container {
@@ -280,7 +182,93 @@ input[type="text"] {
     font-size: 11px;
     padding: 8px;
     align-self: center;
-    background-color: #e62929;
-    outline-color: #e62929;
+    background-color: #c30000;
+    color: #f1f1f1;
+}
+
+/* DELETE all meals */
+
+.btn-delete-meals {
+    box-shadow: 1px 1px 7px #c30000;
+    background-color: #c30000;
+    outline-color: #c30000;
+    color: #f1f1f1;
+}
+
+/* BMI Calculator */
+
+#bmi-result {
+    padding: 8px;
+    background-color: #202020;
+}
+
+.bmi-calculator {
+    margin: 20px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+}
+
+.bmi-calculator label {
+    display: block;
+}
+
+#weight, #height {
+    margin: 10px 5px;
+}
+
+.bmi-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-bmi {
+    box-shadow: 1px 1px 7px #8820ff;
+    background-color: #8820ff;
     color: #ffffff;
+    outline-color: #8820ff;
+}
+
+.bmi-standards {
+    margin: 10px;
+    justify-content: center;
+    display: flex;
+}
+
+.bmi-standards span {
+    padding: 7px;
+    font-size: 14px;
+}
+
+.bmi-standards span:nth-child(1), .bmi-standards span:nth-child(8) {
+    background-color: #7a0b0d48;
+    color:#f1f1f1;
+}
+
+.bmi-standards span:nth-child(2), .bmi-standards span:nth-child(7) {
+    background-color: #b7311d48;
+    color:#f1f1f1;
+}
+
+.bmi-standards span:nth-child(3), .bmi-standards span:nth-child(6) {
+    background-color:#92770d48;
+    color: #f1f1f1;
+}
+
+.bmi-standards span:nth-child(4) {
+    background-color: #009e3748;
+    color:#f1f1f1;
+}
+
+.bmi-standards span:nth-child(5) {
+    background-color: #e7c51748;
+    color:#f1f1f1;
+}
+
+@media screen and (max-width: 630px) {
+    .bmi-standards{
+        flex-flow: column;
+    }
 }
